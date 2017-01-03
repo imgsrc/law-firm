@@ -1,0 +1,34 @@
+{
+  "name": "law-firm",
+  "version": "1.0.0",
+  "description": "Сайт юридической компании",
+  "devDependencies": {
+    "browser-sync": "^2.11.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-clean-css": "^2.3.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.0.4",
+    "gulp-sourcemaps": "^1.9.1",
+    "gulp-uglifyjs": "^0.6.2",
+    "node-bourbon": "^4.2.3"
+  },
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp-clean-css": "^2.3.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imgsrc/law-firm.git"
+  },
+  "author": "esx <nikolaev.i@outlook.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imgsrc/law-firm/issues"
+  },
+  "homepage": "https://github.com/imgsrc/law-firm#readme"
+}
