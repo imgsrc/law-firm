@@ -1,5 +1,6 @@
 @import "bourbon";
 @import "vars";
+@import "../app/libs/owl.carousel/dist/assets/owl.carousel.min";
 
 body {
   font-size: 16px;
@@ -9,7 +10,6 @@ body {
   font-family: "RobotoRegular", sans-serif;
   overflow-x: hidden;
   color: $black;
-  background-color: $main-color;
 }
 
 a {
@@ -29,7 +29,7 @@ h1, h2, h3, h4, h5, h6, .button {
 
 .text-right {
   text-align: right;
-  
+
 }
 
 .text-left {
@@ -41,8 +41,9 @@ h1, h2, h3, h4, h5, h6, .button {
   background-color: $accent-color;
   border-radius: 2px;
   font-size: em(16px);
-  padding: 6px 22px;
+  padding: 10px 30px;
   position: relative;
+  transition: background-color .25s ease;
   &::after {
     position: absolute;
     content: '';
@@ -57,9 +58,14 @@ h1, h2, h3, h4, h5, h6, .button {
   &:hover, &:focus {
     text-decoration: none;
     color: #222;
+    background-color: lighten($accent-color, 12%);
+  }
+  &:active {
+    background-color: darken($accent-color, 10%);
   }
   &-small {
     font-size: em(14px);
+    padding: 6px 22px;
     &::after {
       height: 2px;
     }
@@ -71,6 +77,8 @@ h1, h2, h3, h4, h5, h6, .button {
   background-color: $main-color;
   text-align: center;
   border-bottom: 1px solid lighten($main-color, 6%);
+  position: relative;
+  z-index: 3;
   a {
     color: #fff;
   }
@@ -128,12 +136,14 @@ h1, h2, h3, h4, h5, h6, .button {
   }
 }
 
-//Top Pfnnel
+//Top Pannel
 .top-pannel {
   background-color: rgba(lighten($main-color, 2%), .8);
   color: #fff;
   padding: 50px 0;
   position: relative;
+  z-index: 1;
+  box-shadow: rgba(255, 255, 255, .03) 0 5px 0 5px;
   &-content {
     position: relative;
     z-index: 1;
@@ -200,7 +210,7 @@ h1, h2, h3, h4, h5, h6, .button {
 }
 
 .top-phone {
-  font-size: em(20px);
+  font-size: em(18px);
   font-family: "RobotoCondensedRegular", sans-serif;
   margin-top: -3px;
   span {
@@ -230,3 +240,128 @@ h1, h2, h3, h4, h5, h6, .button {
 .top-button {
   margin-top: 22px;
 }
+
+.slider-wrap {
+  .slider-nav-container {
+    position: relative;
+    .slider-nav {
+      color: #fff;
+      font-size: 36px;
+      position: absolute;
+      width: 100%;
+      z-index: 2;
+      div {
+        cursor: pointer;
+        position: absolute;
+        top: 180px;
+        &:last-child {
+          right: 0;
+        }
+      }
+    }
+  }
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  .owl-dots {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    text-align: center;
+    .owl-dot {
+      display: inline-block;
+      margin: 0 3px;
+      width: 14px;
+      height: 14px;
+      background-color: darken($main-color, 10%);
+      border-radius: 10em;
+      cursor: pointer;
+      transition: background-color .25s ease;
+      &.active {
+        background-color: $accent-color;
+      }
+    }
+  }
+  .slide-wrap {
+    float: left;
+    &.active {
+      h2 {
+        opacity: 1;
+        left: 0;
+      }
+      p {
+        opacity: 1;
+        left: 0;
+      }
+      .slide-img-wrap {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  }
+  .slide {
+    position: relative;
+    color: #fff;
+    padding-bottom: 110px;
+    padding-top: 280px;
+    h2 {
+      position: relative;
+      left: 100px;
+      opacity: 0;
+      transition: all 1s ease;
+      font-family: "RobotoCondensedLight", sans-serif;
+      font-size: em(40px);
+      margin-top: 0;
+      line-height: em(19px);
+      margin-bottom: 20px;
+      &:first-line {
+        color: $accent-color;
+      }
+    }
+    p {
+      font-family: "RobotoLight", sans-serif;
+      position: relative;
+      left: 80px;
+      opacity: 0;
+      margin-bottom: 40px;
+      transition: all 1.5s ease;
+      transition-delay: .15s;
+    }
+    &-bg {
+      position: absolute;
+      background-size: cover;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      &::before {
+        position: absolute;
+        content: '';
+        background-color: $main-color;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: .85;
+      }
+    }
+    &-content {
+      position: relative;
+      z-index: 1;
+      padding-top: 80px;
+    }
+  }
+}
+
+.slide-img-wrap {
+  max-width: 100%;
+  padding-right: 13px;
+  opacity: 0;
+  transform: scale(.8);
+  transition: all 1s;
+  transition-delay: .15s;
+}
+
