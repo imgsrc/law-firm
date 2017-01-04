@@ -29,7 +29,7 @@
         margin: 0
     }
     
-    article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
         display: block
     }
     
@@ -1253,9 +1253,7 @@
         position: fixed;
     }
     
-    @-ms-viewport {
-        width: device-width;
-    }
+
     
     .visible-xs, .visible-sm, .visible-md, .visible-lg {
         display: none !important
@@ -1565,13 +1563,18 @@
 
 <body class="ishome">
 
+<div class="mobile-mnu hidden-md hidden-lg">
+    <a href="#" class="toggle-mnu"><span></span></a><b>Меню</b>
+</div>
+
 <header class="main-head">
+    
     
     <nav class="top-line">
         
         <div class="container">
-            <ul class="sf-menu">
-                <li><a href="#">Главная</a></li>
+            <ul class="sf-menu hidden-sm hidden-xs">
+                <li class="active"><a href="#">Главная</a></li>
                 <li><a href="#">О компании</a></li>
                 <li>
                     <a href="#">Услуги и стоимость <i class="fa fa-caret-down" aria-hidden="true"></i></a>
@@ -1601,16 +1604,16 @@
                 <div class="row">
                     
                     
-                    <div class="col-md-2">
+                    <div class="col-md-2 col-sm-6 col-xs-4">
                         <a href="#" class="logo"><img src="img/logo.png" alt="Юрдис"></a>
                     </div><!-- ./col-md-2 -->
                     
                     
                     <div class="col-md-4">
                         
-                        <div class="top-pannel-box">
+                        <div class="top-pannel-box hidden-sm hidden-xs">
                             
-                            <h4>Адреса организаций</h4>
+                            <h4>Адреса организаций:</h4>
                             <ul>
                                 <li><i class="fa fa-map-marker" aria-hidden="true"></i> г. Москва, ул. Соколовского,
                                     д.3, офис № 305
@@ -1625,9 +1628,9 @@
                     
                     <div class="col-md-3">
                         
-                        <div class="top-pannel-box">
+                        <div class="top-pannel-box hidden-sm hidden-xs">
                             
-                            <h4>Время работы</h4>
+                            <h4>Время работы:</h4>
                             <ul>
                                 <li><i class="fa fa-clock-o" aria-hidden="true"></i> пн-пт с 10-00 до 18-00;<br>
                                     перерыв с 13-00 до 14-00<br>
@@ -1638,14 +1641,14 @@
                     </div><!-- ./col-md-3 -->
                     
                     
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-sm-6 col-xs-8">
                         <div class="text-right">
                             
                             <div class="top-phone">
                                 <span><i class="fa fa-phone"></i> 8 (929)</span> 333-77-88, 333-77-88
                             </div><!-- ./top-phone -->
                             
-                            <div class="top-email">
+                            <div class="top-email hidden-sm hidden-xs">
                                 <span><i class="fa fa-envelope"></i> E-mail:</span> <a
                                 href="mailto:emailsender.gmail.com">emailsender.gmail.com</a>
                             </div><!-- ./top-email -->
@@ -1655,6 +1658,8 @@
                             </div><!-- ./top-button -->
                         </div><!-- ./text-right -->
                     </div><!-- ./col-md-3 -->
+                    
+                    
                 </div><!-- ./row -->
             </div><!-- ./top-pannel-content -->
         </div><!-- ./container -->
@@ -1688,7 +1693,7 @@
                     <div class="container">
                         <div class="row">
                             
-                            <div class="col-md-10 col-md-offset-1">
+                            <div class="col-md-10 col-sm-9 col-xs-offset-1">
                                 <div class="row">
                                     
                                     <div class="col-md-6">
@@ -1700,7 +1705,7 @@
                                         <a href="#" class="button">Список услуг</a>
                                     </div>
                                     
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 hidden-sm hidden-xs">
                                         <div class="slide-img-wrap">
                                             <img src="img/slide-img-1.png" alt="Alt">
                                         </div><!-- ./slide-img-wrap -->
@@ -1722,7 +1727,7 @@
                     <div class="container">
                         <div class="row">
                             
-                            <div class="col-md-10 col-md-offset-1">
+                            <div class="col-md-10 col-sm-9 col-xs-offset-1">
                                 <div class="row">
                                     
                                     <div class="col-md-6">
@@ -1734,7 +1739,7 @@
                                         <a href="#" class="button">Список услуг</a>
                                     </div>
                                     
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 hidden-sm hidden-xs">
                                         <div class="slide-img-wrap">
                                             <img src="img/slide-img-1.png" alt="Alt">
                                         </div><!-- ./slide-img-wrap -->
@@ -1756,7 +1761,7 @@
                     <div class="container">
                         <div class="row">
                             
-                            <div class="col-md-10 col-md-offset-1">
+                            <div class="col-md-10 col-sm-9 col-xs-offset-1">
                                 <div class="row">
                                     
                                     <div class="col-md-6">
@@ -1768,7 +1773,7 @@
                                         <a href="#" class="button">Список услуг</a>
                                     </div>
                                     
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 hidden-sm hidden-xs">
                                         <div class="slide-img-wrap">
                                             <img src="img/slide-img-1.png" alt="Alt">
                                         </div><!-- ./slide-img-wrap -->

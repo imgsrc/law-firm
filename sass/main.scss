@@ -1,5 +1,13 @@
 @import "bourbon";
 @import "vars";
+//Load Libs SASS
+@import "../app/libs/animate/animate";
+@import "../app/libs/superfish/dist/css/superfish";
+@import "../app/libs/font-awesome/scss/font-awesome";
+@import "../app/libs/Jquery.mmenu/dist/css/jquery.mmenu.all";
+
+
+
 
 *::-webkit-input-placeholder {
   color: #666;
@@ -31,13 +39,11 @@ body textarea:required:valid {
   color: #666;
 }
 
-//Custom Styles Here
+.mm-mmenu.mm-offcanvas {
+  z-index: 4;
+}
 
 //ALWAYS END
 @import "media";
 
-//Load Libs SASS
-@import "../app/libs/animate/animate";
-@import "../app/libs/superfish/dist/css/superfish";
-@import "../app/libs/font-awesome/scss/font-awesome";
 

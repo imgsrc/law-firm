@@ -16,11 +16,12 @@ $(function () {
         navText: ''
     });
     $(".next").on("click", function () {
-       owl.trigger("next.owl.carousel");
+        owl.trigger("next.owl.carousel");
     });
     $(".prev").on("click", function () {
         owl.trigger("prev.owl.carousel");
     });
+
 
     //SVG Fallback
     if (!Modernizr.svg) {
@@ -28,6 +29,22 @@ $(function () {
             return $(this).attr("src").replace(".svg", ".png");
         });
     }
+
+    $("#my-menu").mmenu({
+        extentions: ['widescreen', 'theme-white', 'effect-menu-slide', 'pagedim-black'],
+        navbar: {
+            title: "Меню"
+        }
+    });
+
+    $(".mobile-mnu").after("#my-menu").click(function () {
+        var mmAPI = $("#my-menu").data("mmenu");
+        mmAPI.open();
+        var thiss = $(this).find(".toggle-mnu");
+        thiss.toggleClass("on");
+        $(".main-mnu").slideToggle();
+        return false;
+    });
 
     //E-mail Ajax Send
     //Documentation & Example: https://github.com/agragregra/uniMail
