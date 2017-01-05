@@ -5,8 +5,7 @@ var gulp = require('gulp'),
     cleanCSS = require('gulp-clean-css'),
     rename = require('gulp-rename'),
     browserSync = require('browser-sync').create(),
-    concat = require('gulp-concat'),
-    uglify = require('gulp-uglifyjs');
+    concat = require('gulp-concat');
 
 gulp.task('browser-sync', ['styles', 'scripts'], function () {
     browserSync.init({
@@ -18,7 +17,7 @@ gulp.task('browser-sync', ['styles', 'scripts'], function () {
 });
 
 gulp.task('styles', function () {
-    return gulp.src('sass/*.scss')
+    return gulp.src('app/sass/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({
             includePaths: require('node-bourbon').includePaths
@@ -40,7 +39,7 @@ gulp.task('scripts', function () {
         './app/libs/plugins-scroll/plugins-scroll.js',
         './app/libs/superfish/dist/js/superfish.min.js',
         './app/libs/owl.carousel/dist/owl.carousel.min.js',
-        './app/libs/Jqwery.mmenu/dist/js/jquery.mmenu.all.min.js'
+        './app/libs/jQuery.mmenu/dist/js/jquery.mmenu.all.min.js'
     ])
         .pipe(concat('libs.js'))
         //.pipe(uglify()) //Minify libs.js
@@ -48,7 +47,7 @@ gulp.task('scripts', function () {
 });
 
 gulp.task('watch', function () {
-    gulp.watch('sass/*.scss', ['styles']).on('change', browserSync.reload);
+    gulp.watch('app/sass/*.scss', ['styles']).on('change', browserSync.reload);
     gulp.watch('app/libs/**/*.js', ['scripts']).on('change', browserSync.reload);
     gulp.watch('app/js/*.js').on("change", browserSync.reload);
     gulp.watch('app/*.html').on('change', browserSync.reload);
