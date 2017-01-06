@@ -1,5 +1,9 @@
 $(function () {
 
+    $(".services .service-item h4").equalHeights();
+    $(".news .new-item-text").equalHeights();
+    $(".link-item").equalHeights();
+
     //OwlCarousel2
     var owl = $(".slider");
     owl.owlCarousel({

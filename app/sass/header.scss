@@ -21,9 +21,9 @@ strong, b {
   font-weight: normal;
 }
 
-h1, h2, h3, h4, h5, h6, .button {
+h1, h2, h3, h4, h5, h6, .button,
+.h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: "RobotoCondensedBold", sans-serif;
-  font-weight: normal;
   text-transform: uppercase;
 }
 
@@ -41,7 +41,8 @@ h1, h2, h3, h4, h5, h6, .button {
   background-color: $accent-color;
   border-radius: 2px;
   font-size: em(16px);
-  padding: 10px 30px;
+  padding: 10px 35px;
+  font-weight: 600;
   position: relative;
   transition: background-color .25s ease;
   &::after {
@@ -65,7 +66,7 @@ h1, h2, h3, h4, h5, h6, .button {
   }
   &-small {
     font-size: em(14px);
-    padding: 6px 22px;
+    padding: 6px 18px;
     &::after {
       height: 2px;
     }
@@ -443,9 +444,12 @@ h1, h2, h3, h4, h5, h6, .button {
 .teaser {
   background-color: $main-color;
   color: #fff;
-  padding: 28px 0;
+  padding: 28px 0 18px;
   .teaser-item {
     display: table-row;
+    > div {
+      margin-bottom: 10px;
+    }
     .teaser-count {
       display: table-cell;
       vertical-align: middle;
