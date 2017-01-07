@@ -36,6 +36,10 @@ h1, h2, h3, h4, h5, h6, .button,
   text-align: left;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .button {
   color: #111;
   background-color: $accent-color;
@@ -45,6 +49,7 @@ h1, h2, h3, h4, h5, h6, .button,
   font-weight: 600;
   position: relative;
   transition: background-color .25s ease;
+  border: none;
   &::after {
     position: absolute;
     content: '';
@@ -69,6 +74,113 @@ h1, h2, h3, h4, h5, h6, .button,
     padding: 6px 18px;
     &::after {
       height: 2px;
+    }
+  }
+}
+
+.isnohome {
+  .top-line {
+    .sf-menu {
+      li {
+        a {
+          padding: 15px 28px;
+        }
+      }
+    }
+  }
+  .top-pannel {
+    padding: 25px 0;
+  }
+  .slider {
+    .slide {
+      padding: 120px 0 40px;
+      .slide-content {
+        .col-md-6 {
+          width: 100%;
+        }
+        p, .slide-img-wrap {
+          display: none;
+        }
+        h2 {
+          font-size: em(36px);
+        }
+      }
+    }
+    .owl-dots {
+      display: none;
+    }
+  }
+  .slider-wrap {
+    .slider-nav-container {
+      .slider-nav {
+        div {
+          top: 220px;
+        }
+      }
+    }
+  }
+}
+
+.content {
+  padding: 60px 0;
+  article {
+    h1 {
+      margin-top: 0;
+    }
+    img {
+      max-width: 100%;
+    }
+  }
+  .main-aside {
+    .top-pannel-box {
+      margin: 30px 0;
+      h4 {
+        font-family: "RobotoCondensedBold", sans-serif;
+        font-size: em(22px);
+        margin-bottom: 20px;
+      }
+      .menu-type-2 {
+        li {
+          display: block;
+          max-width: 100%;
+          opacity: 1;
+          padding: 0;
+          &.active {
+            a {
+              background-color: $accent-color;
+              color: #fff;
+              font-family: "RobotoBold", sans-serif;
+
+              .fa {
+                color: lighten($accent-color, 30%);
+              }
+            }
+          }
+          a {
+            color: #111;
+            font-size: em(18px);
+            text-transform: uppercase;
+            display: block;
+            font-weight: 500;
+            padding: {
+              top: 8px;
+              bottom: 8px;
+              left: 20px;
+            }
+            text-indent: 10px;
+            border-bottom: 1px solid #f0f0f0;
+            transition: all .5s ease;
+            &:hover {
+              color: $main-color;
+            }
+            .fa {
+              font-size: 14px;
+              color: $accent-color;
+              top: 12px;
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -236,7 +348,7 @@ h1, h2, h3, h4, h5, h6, .button,
   .top-button {
     margin-top: 22px;
     .button {
-      font-weight: 600;
+      font-weight: 500;
     }
   }
 }
@@ -251,6 +363,7 @@ h1, h2, h3, h4, h5, h6, .button,
 
 .slider-wrap {
   position: relative;
+  display: none;
   .slider-nav-container {
     position: relative;
     .slider-nav {
@@ -322,10 +435,11 @@ h1, h2, h3, h4, h5, h6, .button,
       opacity: 0;
       transition: all 1s ease;
       font-family: "RobotoCondensedLight", sans-serif;
-      font-size: em(40px);
+      font-size: em(43px);
       margin-top: 0;
       line-height: em(19px);
       margin-bottom: 20px;
+      font-weight: normal;
       &:first-line {
         color: $accent-color;
       }

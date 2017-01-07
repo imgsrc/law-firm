@@ -5,6 +5,8 @@
 @import "../libs/superfish/dist/css/superfish";
 @import "../libs/font-awesome/scss/font-awesome";
 @import "../libs/jQuery.mmenu/dist/css/jquery.mmenu.all";
+@import "../libs/magnific-popup/dist/magnific-popup";
+@import "../css/magnific-custom";
 
 *::-webkit-input-placeholder {
   color: #666;
@@ -36,6 +38,7 @@ body textarea:required:valid {
   color: #666;
 }
 
+
 #my-menu {
   z-index: 4 !important;
   .fa {
@@ -48,88 +51,89 @@ body textarea:required:valid {
   .col-md-3 {
     padding: 0;
   }
-  .service-item {
-    border: 5px solid lighten($main-color, 6%);
-    transition: transform .5s ease;
-    text-align: center;
-    padding-bottom: 32px;
-    background-color: #fff;
-    z-index: 2;
-    &-stars {
-      font-size: 11px;
-      color: #b4b4b4;
-      .fa {
-        margin-right: 1px;
-        transition: all .5s ease;
+}
+
+.service-item {
+  border: 5px solid lighten($main-color, 6%);
+  transition: transform .5s ease;
+  text-align: center;
+  padding-bottom: 32px;
+  background-color: #fff;
+  z-index: 2;
+  .service-item-image {
+    min-height: 190px;
+    background-size: cover;
+    position: relative;
+    .fa {
+      font-size: 30px;
+      color: #fff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: {
+        left: -10px;
+        top: -10px;
       }
+      opacity: 0;
+      transition: all .5s ease;
     }
-    &-image {
-      min-height: 190px;
-      background-size: cover;
-      position: relative;
+    &::before {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: $main-color;
+      opacity: 0;
+      transition: all .5s ease;
+    }
+  }
+  &-stars {
+    font-size: 11px;
+    color: #b4b4b4;
+    .fa {
+      margin-right: 1px;
+      transition: all .5s ease;
+    }
+  }
+  &-price {
+    font: {
+      size: em(17px);
+      family: "RobotoBold", sans-serif;
+    }
+    margin: {
+      top: 5px;
+      bottom: 26px;
+    }
+    .fa {
+      color: $accent-color;
+      font-size: 19px;
+    }
+    span {
+      font-size: em(28px);
+    }
+  }
+  h4 {
+    font-size: em(18px);
+    margin-bottom: 10px;
+  }
+  &:hover {
+    transform: scale(1.05);
+    border-color: $accent-color;
+    box-shadow: rgba(0, 0, 0, .35) 0 0 32px;
+    .service-item-image {
       .fa {
-        font-size: 30px;
-        color: #fff;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        margin: {
-          left: -10px;
-          top: -10px;
-        }
-        opacity: 0;
-        transition: all .5s ease;
+        opacity: .5;
       }
       &::before {
-        position: absolute;
-        content: '';
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        background-color: $main-color;
-        opacity: 0;
-        transition: all .5s ease;
+        opacity: .7;
       }
     }
-    &-price {
-      font: {
-        size: em(17px);
-        family: "RobotoBold", sans-serif;
-      }
-      margin: {
-        top: 5px;
-        bottom: 26px;
-      }
+    .service-item-stars {
+      color: $accent-color;
       .fa {
-        color: $accent-color;
-        font-size: 19px;
-      }
-      span {
-        font-size: em(28px);
-      }
-    }
-    h4 {
-      font-size: em(18px);
-      margin-bottom: 10px;
-    }
-    &:hover {
-      transform: scale(1.05);
-      border-color: $accent-color;
-      box-shadow: rgba(0, 0, 0, .35) 0 0 32px;
-      .service-item-image {
-        .fa {
-          opacity: .5;
-        }
-        &::before {
-          opacity: .7;
-        }
-      }
-      .service-item-stars {
-        color: $accent-color;
-        .fa {
-          margin: 0 3px;
-        }
+        margin: 0 3px;
       }
     }
   }
@@ -263,6 +267,161 @@ body textarea:required:valid {
     }
   }
 }
+
+.main-foot {
+  color: #fff;
+  background-color: #0e0b13;
+  padding: 70px 0;
+  .logo {
+    opacity: .6;
+  }
+  .footer-about {
+    opacity: .5;
+    font-size: em(13px);
+    margin: {
+      top: 28px;
+      bottom: 50px;
+    }
+  }
+  .top-pannel-box {
+    margin-bottom: 25px;
+    .menu-type-2 {
+      li {
+        max-width: 100%;
+        opacity: .6;
+        font-size: em(13px);
+        margin-bottom: 8px;
+        display: block;
+        transition: all .5s ease;
+        &:hover {
+          opacity: .9;
+          .fa {
+            opacity: .8;
+          }
+        }
+        a {
+          color: #fff;
+          text-decoration: underline;
+          display: block;
+          &:hover {
+            text-decoration: none;
+          }
+          .fa {
+            top: 1px;
+          }
+        }
+        .fa {
+          opacity: .4;
+          transition: all .5s ease;
+        }
+      }
+    }
+  }
+  .top-phone {
+    font-size: em(19px);
+    font-family: "RobotoCondensedRegular", sans-serif;
+    margin-top: -3px;
+    span {
+      font-size: em(12px);
+      opacity: .3;
+    }
+  }
+  .top-email {
+    font-size: em(14px);
+    a {
+      color: #fff;
+      text-decoration: underline;
+    }
+    span {
+      opacity: .3;
+    }
+  }
+  .top-email,
+  .top-phone {
+    .fa {
+      margin-right: 3px;
+    }
+  }
+  .top-button {
+    margin: {
+      top: 22px;
+      bottom: 40px;
+    }
+    .button {
+      font-weight: 600;
+    }
+  }
+  .developer {
+    margin: {
+      top: 80px;
+      bottom: 30px;
+    }
+    a {
+      color: #fff;
+      display: inline-block;
+      width: 120px;
+      font-size: em(14px);
+      text-align: left;
+      &:hover, &:focus {
+        text-decoration: none;
+      }
+      img, span {
+        display: block;
+      }
+    }
+  }
+}
+
+.popup-form {
+  position: relative;
+  .success {
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-color: #fff;
+    z-index: 2;
+    font-family: "RobotoCondensedBold", sans-serif;
+    font-weight: 500;
+    padding: 30px;
+    text-transform: uppercase;
+    align-items: center;
+    &.visible {
+      display: flex;
+    }
+  }
+  h3 {
+    text-align: center;
+  }
+  label, input {
+    display: block;
+    width: 100%;
+  }
+  label {
+    margin-bottom: 13px;
+    span {
+      font-size: em(16px);
+      color: #999;
+    }
+  }
+  input {
+    border: 4px solid $accent-color;
+    padding: 7px 15px;
+  }
+  .button {
+    margin: {
+      top: 20px;
+      bottom: 10px;
+    }
+  }
+}
+
+
+
+
 
 //ALWAYS END
 @import "media";
